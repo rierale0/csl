@@ -1,26 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+
+/* =========================
+   🎨 CAMACHO SÁNCHEZ LOGISTICS DESIGN TOKENS
+   ========================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sans: 'Poppins';
+
+  /* === CSL BRAND COLORS === */
+  --csl-bg-main: #2D3239;           /* Fondo principal */
+  --csl-bg-secondary: #0C0F2F;      /* Fondo secundario */
+  --csl-bg-light: #EBF3FE;          /* Fondo claro / tarjetas */
+  --csl-text-dark: #EBF3FE;         /* Texto sobre fondos oscuros */
+  --csl-text-muted: #bac2ce;
+  --csl-text-light: #2D3239;        /* Texto sobre fondos claros */
+  --csl-primary: #DC6018;           /* Naranja: énfasis/botones */
+  --csl-accent: #6285AF;            /* Azul: acento */
+
+
+  /* Sistema de diseño general */
+  --color-background: var(--csl-bg-main);
+  --color-foreground: var(--csl-text-dark);
+
+  --color-card: var(--csl-bg-light);
+  --color-card-foreground: var(--csl-text-light);
+
+  --color-popover: var(--csl-bg-light);
+  --color-popover-foreground: var(--csl-text-light);
+
+  --color-primary: var(--csl-primary);
+  --color-primary-foreground: #fff;
+
+  --color-secondary: var(--csl-bg-secondary);
+  --color-secondary-foreground: var(--csl-text-dark);
+
+  --color-muted: var(--csl-bg-secondary);
+  --color-muted-foreground: var(--csl-text-dark);
+
+  --color-accent: var(--csl-accent);
+  --color-accent-foreground: #fff;
+
+  --color-destructive: #e5484d;
+  --color-border: var(--csl-bg-secondary);
+  --color-input: var(--csl-bg-light);
+  --color-ring: var(--csl-primary);
+
+  --radius: 0.625rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =========================
+   🅰️ Base styles
+   ========================= */
+body {
+  font-family: var(--font-sans);
+  font-display: swap;
+  background: var(--color-background);
+  color: var(--color-foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-[var(--color-background)] text-[var(--color-foreground)];
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* =========================
+   ✨ Utilidades de color personalizadas (para usar directo en className)
+   ========================= */
+@layer utilities {
+  .bg-csl-main      { background-color: var(--csl-bg-main); }
+  .bg-csl-secondary { background-color: var(--csl-bg-secondary); }
+  .bg-csl-light     { background-color: var(--csl-bg-light); }
+  .bg-csl-primary   { background-color: var(--csl-primary); }
+  .bg-csl-accent    { background-color: var(--csl-accent); }
+
+  .text-csl-dark    { color: var(--csl-text-dark); }
+  .text-csl-light   { color: var(--csl-text-light); }
+  
+}
+
+/* =========================
+   🦊 Scrollbar custom
+   ========================= */
+.scroll-area {
+  scrollbar-gutter: stable both-edges;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.scroll-area.show-scroll::-webkit-scrollbar {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background: var(--color-border, #222635);
+  border-radius: 7px;
+  transition: background 0.2s;
+}
+.scroll-area::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary, #DC6018);
+}
+.scroll-area::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.scroll-area {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border, #222635) transparent;
+}
+
+
+
+/* Botón con animación fill izquierdo-derecha */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: color 0.3s cubic-bezier(0.4,0,0.2,1);
+  background: transparent;
+}
+.btn-fill .fill-bg {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: var(--csl-bg-light);     /* <-- Fondo inicial */
+  z-index: -1;
+  transition: background 0.3s cubic-bezier(0.4,0,0.2,1);
+  border-radius: 9999px; /* rounded-full */
+}
+.btn-fill:hover .fill-bg,
+.btn-fill:focus-visible .fill-bg {
+  background: var(--csl-primary);      /* <-- Color en hover */
+}
+.btn-fill:hover,
+.btn-fill:focus-visible {
+  color: var(--csl-text-dark);
 }
