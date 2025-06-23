@@ -1,4 +1,4 @@
-import { ShieldCheck, Ship, SquaresSubtract, Users } from "lucide-react";
+import { ShieldCheck, Ship, Users } from "lucide-react";
 import Image from "next/image";
 
 export default function Objectives() {
