@@ -1,3 +1,7 @@
+"use client"
+import React, { useRef } from "react";
+import * as motion from "motion/react-client";
+import { useInView } from "motion/react";
 import {
   Container,
   MoveHorizontal,
@@ -6,12 +10,33 @@ import {
   SquaresSubtract,
 } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 
 export default function Services() {
+  const titleRef = useRef(null);
+  const secoRef = useRef(null);
+  const secoImgRef = useRef(null);
+  const piesRef = useRef(null);
+  const piesImgRef = useRef(null);
+  const shieldRef = useRef(null);
+  const footerRef = useRef(null);
+
+  const titleInView = useInView(titleRef, { amount: 0.3 });
+  const secoInView = useInView(secoRef, { amount: 0.3 });
+  const secoImgInView = useInView(secoImgRef, { amount: 0.3 });
+  const piesInView = useInView(piesRef, { amount: 0.3 });
+  const piesImgInView = useInView(piesImgRef, { amount: 0.3 });
+  const shieldInView = useInView(shieldRef, { amount: 0.3 });
+  const footerInView = useInView(footerRef, { amount: 0.3 });
+
   return (
     <section className="text-csl-dark mb-20 px-4 sm:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-6 gap-x-8 gap-y-10">
+      <motion.div
+        ref={titleRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={titleInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="grid grid-cols-1 sm:grid-cols-6 gap-x-8 gap-y-10"
+      >
         <div className="sm:col-start-1 sm:col-end-5 flex gap-4 mb-10 items-center justify-center sm:justify-start">
           <div className="w-24 h-px bg-white self-center hidden sm:block" />
           <h2 className="text-2xl sm:text-3xl font-medium flex items-center gap-2 text-center sm:text-left">
@@ -19,15 +44,27 @@ export default function Services() {
           </h2>
         </div>
 
-        {/* Secos o refrigerados + imagen en la misma fila desktop */}
-        <div className="sm:col-start-2 sm:col-end-4 flex items-center gap-2 text-xl sm:text-2xl max-w-xl justify-center sm:justify-start leading-normal">
+        <motion.div
+          ref={secoRef}
+          initial={{ opacity: 0, x: -30 }}
+          animate={secoInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="sm:col-start-2 sm:col-end-4 flex items-center gap-2 text-xl sm:text-2xl max-w-xl justify-center sm:justify-start leading-normal"
+        >
           <SquaresSubtract className="flex-shrink-0" />
           <p className="m-0">
             <span className="text-[#E97154]">Secos</span> o{" "}
             <span className="text-[#A9CDFF]">refrigerados</span>
           </p>
-        </div>
-        <div className="sm:col-start-4 sm:col-end-6 relative group flex justify-center sm:justify-start">
+        </motion.div>
+
+        <motion.div
+          ref={secoImgRef}
+          initial={{ opacity: 0, x: 30 }}
+          animate={secoImgInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="sm:col-start-4 sm:col-end-6 relative group flex justify-center sm:justify-start"
+        >
           <div className="absolute bottom-full left-1/2 mb-2 max-w-xs px-3 py-2 border border-[#E97154] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 whitespace-normal">
             Carga estándar y paletizada protegida contra intemperie
           </div>
@@ -39,14 +76,26 @@ export default function Services() {
             height={200}
             sizes="(min-width: 640px) 300px, 200px"
           />
-        </div>
+        </motion.div>
 
-        {/* 20 o 40 pies + imagen en la misma fila desktop */}
-        <div className="sm:col-start-2 sm:col-end-4 flex items-center gap-2 text-xl sm:text-2xl max-w-xl justify-center sm:justify-start leading-normal">
+        <motion.div
+          ref={piesRef}
+          initial={{ opacity: 0, x: -30 }}
+          animate={piesInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="sm:col-start-2 sm:col-end-4 flex items-center gap-2 text-xl sm:text-2xl max-w-xl justify-center sm:justify-start leading-normal"
+        >
           <MoveHorizontal className="flex-shrink-0" />
           <span>De 20 o 40 pies</span>
-        </div>
-        <div className="sm:col-start-4 sm:col-end-6 flex justify-center sm:justify-start">
+        </motion.div>
+
+        <motion.div
+          ref={piesImgRef}
+          initial={{ opacity: 0, x: 30 }}
+          animate={piesImgInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="sm:col-start-4 sm:col-end-6 flex justify-center sm:justify-start"
+        >
           <Image
             src="/images/container-sizes.png"
             alt="container"
@@ -54,9 +103,15 @@ export default function Services() {
             height={300}
             sizes="(min-width: 640px) 400px, 300px"
           />
-        </div>
+        </motion.div>
 
-        <div className="sm:col-start-2 sm:col-end-6 text-base sm:text-xl space-y-4 text-center sm:text-left">
+        <motion.div
+          ref={shieldRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={shieldInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="sm:col-start-2 sm:col-end-6 text-base sm:text-xl space-y-4 text-center sm:text-left"
+        >
           <p className="py-10">
             <Shield size={20} className="inline-block mr-2" />
             <strong>
@@ -64,10 +119,16 @@ export default function Services() {
             </strong>{" "}
             con seguimiento constante y cumplimiento en los tiempos de entrega.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="text-csl-dark flex flex-col items-center px-4 sm:px-8">
+      <motion.div
+        ref={footerRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={footerInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="text-csl-dark flex flex-col items-center px-4 sm:px-8"
+      >
         <h3 className="font-medium text-xl sm:text-2xl text-center mt-20">
           También puedes alquilar con nosotros
         </h3>
@@ -91,12 +152,43 @@ export default function Services() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
 
 function ServicesList() {
+  const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
+  const [visibleIndices, setVisibleIndices] = React.useState<number[]>([]);
+
+  React.useEffect(() => {
+    listRefs.current = listRefs.current.slice(0, 3);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (isIntersecting) {
+            const index = Number(target.getAttribute("data-index"));
+            if (!visibleIndices.includes(index)) {
+              setVisibleIndices((v) => [...v, index]);
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    listRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      listRefs.current.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, [visibleIndices]);
+
   return (
     <div className="w-full overflow-x-auto">
       <ul className="flex flex-col sm:flex-row items-start sm:items-center gap-10 sm:gap-16 py-10 sm:py-20">
@@ -122,9 +214,16 @@ function ServicesList() {
             alt: "generator",
             desc: "Energía confiable para mantener la temperatura de tus contenedores refrigerados.",
           },
-        ].map(({ icon, title, src, alt, desc }) => (
-          <li
+        ].map(({ icon, title, src, alt, desc }, index) => (
+          <motion.li
             key={title}
+            data-index={index}
+            ref={(el) => {
+              listRefs.current[index] = el;
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={visibleIndices.includes(index) ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
             className="flex flex-col gap-3 w-full sm:w-72 flex-shrink-0"
           >
             <p className="text-lg font-medium truncate flex items-center gap-2">
@@ -140,7 +239,7 @@ function ServicesList() {
               />
             </div>
             <span className="font-light text-base leading-tight">{desc}</span>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>
