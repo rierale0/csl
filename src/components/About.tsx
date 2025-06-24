@@ -2,16 +2,18 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="mt-40 pb-30 bg-[#EBF3FE] text-csl-light grid grid-cols-6 grid-rows-[60px,auto,auto,auto]">
-      <div className="col-start-2 col-end-3 mt-30 mb-10">
+    <div className="mt-20 pb-16 pt-16 bg-[#EBF3FE] text-csl-light px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-6 gap-y-10 sm:grid-rows-[60px,auto,auto,auto]">
+      <div className="sm:col-start-2 sm:col-end-3 flex justify-center sm:justify-start">
         <Image
-          src={"/images/csl-logo-light.svg"}
-          alt="container"
-          width={300}
-          height={300}
+          src="/images/csl-logo-light.svg"
+          alt="Camacho Sánchez Logistics logo"
+          width={180}
+          height={180}
+          className="object-contain"
         />
       </div>
-      <div className="col-start-2 col-end-6 row-start-2 mb-4 font-light text-xl">
+
+      <div className="sm:col-start-2 sm:col-end-6 font-light text-base sm:text-xl leading-relaxed">
         <p>
           <b>En Camacho Sánchez Logistics C. LTDA.</b> somos una empresa de transporte
           de carga pesada que opera bajo los más altos estándares legales y de
@@ -21,18 +23,20 @@ export default function About() {
           garantizando un servicio responsable.
         </p>
       </div>
-      <div className="col-start-2 col-end-6 row-start-3 mb-4 font-light text-xl">
+
+      <div className="sm:col-start-2 sm:col-end-6 font-light text-base sm:text-xl leading-relaxed">
         <p>
-        <b>Nuestra misión es ofrecer soluciones integrales de transporte de
+          <b>Nuestra misión es ofrecer soluciones integrales de transporte de
           carga,</b> asegurando la eficiencia, seguridad y calidad en cada
           operación. Apostamos por el desarrollo profesional de nuestro equipo y
           por procesos que contribuyen al éxito de nuestros clientes y socios
           estratégicos.
         </p>
       </div>
-      <div className="col-start-2 col-end-6 row-start-4 mb-4 font-light text-xl">
+
+      <div className="sm:col-start-2 sm:col-end-6 font-light text-base sm:text-xl leading-relaxed">
         <p>
-        <b>Nuestra visión es ser la empresa líder y referente en el transporte de
+          <b>Nuestra visión es ser la empresa líder y referente en el transporte de
           carga pesada en Ecuador:</b> la opción preferida del mercado, un modelo de
           gestión en el sector y una compañía rentable y sostenible.
         </p>

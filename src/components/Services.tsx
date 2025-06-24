@@ -1,98 +1,93 @@
-import { Container, MoveHorizontal, SquaresSubtract } from "lucide-react";
+import {
+  Container,
+  MoveHorizontal,
+  PowerIcon,
+  Shield,
+  SquaresSubtract,
+} from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
 export default function Services() {
   return (
-    <section className="text-csl-dark mb-20">
-      <div className="grid grid-cols-6 grid-rows-[60px,1fr, 1fr,auto] gap-x-8">
-        {/* — Fila 1: Línea + título */}
-        <div className="col-start-1 col-end-5 row-start-1 flex gap-4 mb-10">
-          <div className="w-[20vw] h-px bg-white self-center" />
-          <h2 className="text-3xl font-medium">Transporte de contenedores</h2>
+    <section className="text-csl-dark mb-20 px-4 sm:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-6 gap-x-8 gap-y-10">
+        <div className="sm:col-start-1 sm:col-end-5 flex gap-4 mb-10 items-center justify-center sm:justify-start">
+          <div className="w-24 h-px bg-white self-center hidden sm:block" />
+          <h2 className="text-2xl sm:text-3xl font-medium flex items-center gap-2 text-center sm:text-left">
+            Transporte de contenedores
+          </h2>
         </div>
 
-        {/* — Fila 2: contenido compuesto */}
-        <div className="col-start-2 col-end-7 row-start-2  text-2xl space-y-4">
-          {/* Subfila A: icono + texto y mini-imágenes */}
-          <div className="items-center">
-            <div className="col-span-2 flex items-center gap-2 py-20 self-center">
-              <SquaresSubtract />
-              <p>
-                <span className="text-[#E97154]">Secos</span> o{" "}
-                <span className="text-[#A9CDFF]">refrigerados</span>
-              </p>
-            </div>
+        {/* Secos o refrigerados + imagen en la misma fila desktop */}
+        <div className="sm:col-start-2 sm:col-end-4 flex items-center gap-2 text-xl sm:text-2xl max-w-xl justify-center sm:justify-start leading-normal">
+          <SquaresSubtract className="flex-shrink-0" />
+          <p className="m-0">
+            <span className="text-[#E97154]">Secos</span> o{" "}
+            <span className="text-[#A9CDFF]">refrigerados</span>
+          </p>
+        </div>
+        <div className="sm:col-start-4 sm:col-end-6 relative group flex justify-center sm:justify-start">
+          <div className="absolute bottom-full left-1/2 mb-2 max-w-xs px-3 py-2 border border-[#E97154] text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-x-1/2 whitespace-normal">
+            Carga estándar y paletizada protegida contra intemperie
           </div>
-        </div>
-        <div className="col-start-4 col-end-6 row-start-2 self-center">
-          <div className="relative group">
-            {/* Tooltip */}
-
-            <div className="absolute bottom-full left-1/2 mb-2 w-max max-w-xs px-3 py-2 border border-[#E97154] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              Carga estándar y paletizada protegida contra intemperie
-            </div>
-
-            {/* Imagen */}
-            <Image
-              className="block"
-              src="/images/container-types.png"
-              alt="container"
-              width={300}
-              height={300}
-            />
-          </div>
-        </div>
-
-        {/* — Fila 3 */}
-        <div className="col-start-2 col-end-7 row-start-3  text-2xl space-y-4">
-          {/* Subfila A: icono + texto y mini-imágenes */}
-          <div className="items-center">
-            <div className="col-span-2 flex items-center gap-2 py-20">
-              <MoveHorizontal />
-              <span>De 20 o 40 pies</span>
-            </div>
-          </div>
-        </div>
-        <div className="col-start-4 col-end-6 row-start-3 self-center">
           <Image
-            src="/images/container-sizes.png"
+            className="block"
+            src="/images/container-types.png"
             alt="container"
-            width={400}
-            height={400}
+            width={200}
+            height={200}
+            sizes="(min-width: 640px) 300px, 200px"
           />
         </div>
 
-        <div className="col-start-2 col-end-6 row-start-4  text-2xl space-y-4">
-          {/* Subfila A: icono + texto y mini-imágenes */}
-          <div className="items-center">
-            <div className="col-span-2 flex py-20">
-              <p>
-                <b>Garantizamos el cuidado de tu carga en todo momento,</b> con
-                seguimiento constante y cumplimiento en los tiempos de entrega.
-              </p>
-            </div>
-          </div>
+        {/* 20 o 40 pies + imagen en la misma fila desktop */}
+        <div className="sm:col-start-2 sm:col-end-4 flex items-center gap-2 text-xl sm:text-2xl max-w-xl justify-center sm:justify-start leading-normal">
+          <MoveHorizontal className="flex-shrink-0" />
+          <span>De 20 o 40 pies</span>
+        </div>
+        <div className="sm:col-start-4 sm:col-end-6 flex justify-center sm:justify-start">
+          <Image
+            src="/images/container-sizes.png"
+            alt="container"
+            width={300}
+            height={300}
+            sizes="(min-width: 640px) 400px, 300px"
+          />
+        </div>
+
+        <div className="sm:col-start-2 sm:col-end-6 text-base sm:text-xl space-y-4 text-center sm:text-left">
+          <p className="py-10">
+            <Shield size={20} className="inline-block mr-2" />
+            <strong>
+              Garantizamos el cuidado de tu carga en todo momento
+            </strong>{" "}
+            con seguimiento constante y cumplimiento en los tiempos de entrega.
+          </p>
         </div>
       </div>
-      <div className="text-csl-dark flex flex-col items-center">
-        <h3 className="font-medium text-2xl text-center mt-20">
+
+      <div className="text-csl-dark flex flex-col items-center px-4 sm:px-8">
+        <h3 className="font-medium text-xl sm:text-2xl text-center mt-20">
           También puedes alquilar con nosotros
         </h3>
-        <ServicesList />
-        <div className="grid grid-cols-6 grid-rows-[60px,1fr, 1fr,auto] gap-x-8">
-          <span className="col-start-2 col-end-6 text-start font-semibold text-2xl">
+        <div className="lg:items-center">
+          <ServicesList />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-6 grid-rows-[auto,auto,auto] mt-10 gap-y-6">
+          <span className="sm:col-start-2 sm:col-end-6 text-center sm:text-left font-semibold text-xl sm:text-2xl">
             Viaja tranquilo, nosotros nos encargamos.
           </span>
-          <p className="col-start-2 col-end-5 row-start-2 font-light text-xl">
+          <p className="sm:col-start-2 sm:col-end-5 font-light text-base sm:text-xl text-center sm:text-left">
             Tu carga, contenedores y generadores están siempre protegidos;
             nuestras pólizas de seguro garantizan la cobertura que necesitas
             frente a cualquier accidente o robo mientras estén bajo nuestro
             cuidado.
           </p>
-          <div className="col-start-2 col-end-6 row-start-3 items-center content-center">
-            <button className="flex items-center gap-2 mt-6 bg-[#DC6018] text-2xl md:text-xl text-white font-regular rounded-sm px-5 py-1 hover:bg-[#b94c12] transition cursor-pointer">
-              <Container /> Contáctanos y cotiza ahora
+          <div className="sm:col-start-2 sm:col-end-6 sm:flex sm:justify-start">
+            <button className="flex items-center justify-center gap-2 mt-6 bg-[#DC6018] text-white text-lg sm:text-xl font-normal rounded-sm px-6 py-3 w-full max-w-xs shadow-md hover:bg-[#b94c12] transition cursor-pointer">
+              <Container />
+              Contáctanos y cotiza hoy
             </button>
           </div>
         </div>
@@ -103,39 +98,48 @@ export default function Services() {
 
 function ServicesList() {
   return (
-    <div className="">
-      <ul className="flex items-start gap-16 py-20">
+    <div className="w-full overflow-x-auto">
+      <ul className="flex flex-col sm:flex-row items-start sm:items-center gap-10 sm:gap-16 py-10 sm:py-20">
         {[
           {
             title: "Contenedores secos",
+            icon: Container,
             src: "/images/blue-container.png",
             alt: "container",
             desc: "Ideales para carga al granel y mercancía general.",
           },
           {
             title: "Chasis para contenedores",
+            icon: MoveHorizontal,
             src: "/images/chassis.png",
             alt: "chassis",
             desc: "Disponibles para unidades de 20 y 40 pies, listos para tus operaciones.",
           },
           {
-            title: "Generadores para refrigerados",
+            title: "Generadores",
+            icon: PowerIcon,
             src: "/images/generator.png",
             alt: "generator",
             desc: "Energía confiable para mantener la temperatura de tus contenedores refrigerados.",
           },
-        ].map(({ title, src, alt, desc }) => (
-          <li key={title} className="flex flex-col gap-3 w-78">
-            <p className="text-lg font-medium whitespace-nowrap overflow-hidden truncate">
-              {title}
+        ].map(({ icon, title, src, alt, desc }) => (
+          <li
+            key={title}
+            className="flex flex-col gap-3 w-full sm:w-72 flex-shrink-0"
+          >
+            <p className="text-lg font-medium truncate flex items-center gap-2">
+              {icon && React.createElement(icon)} {title}
             </p>
-            <div className="relative w-78 h-48 rounded-lg overflow-hidden">
-              <Image src={src} alt={alt} fill className="object-cover" />
+            <div className="relative w-full sm:w-72 h-48 rounded-lg overflow-hidden">
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 640px) 288px, 100vw"
+              />
             </div>
-
-            <span className="font-light text-md leading-tight w-78">
-              {desc}
-            </span>
+            <span className="font-light text-base leading-tight">{desc}</span>
           </li>
         ))}
       </ul>

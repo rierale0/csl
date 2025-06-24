@@ -14,7 +14,7 @@ export default function TrustedCompanies() {
   return (
     <section className="py-52 text-center">
       {/* Título */}
-      <h2 className="text-[1.2vw] font-light mb-8">
+      <h2 className="text-xl font-light mb-8">
         Compañías que han confiado su carga a CSL
       </h2>
 
