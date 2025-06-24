@@ -12,23 +12,24 @@ export default function TrustedCompanies() {
   ];
 
   return (
-    <section className="py-52 text-center">
-      {/* Título */}
-      <h2 className="text-xl font-light mb-8">
-        Compañías que han confiado su carga a CSL
-      </h2>
+    <section className="py-52 text-center px-4 sm:px-20 md:px-40 lg:px-60">
+  <h2 className="text-xl font-light mb-8">
+    Compañías que han confiado su carga a CSL
+  </h2>
 
-      <div className="grid gap-8 grid-cols-3 items-center px-60">
-        {companies.map((c) => (
-          <div key={c.name} className="flex justify-center">
-            <img
-              src={c.logo}
-              alt={c.name}
-              className="max-h-12 object-contain"
-            />
-          </div>
-        ))}
+  <div className="grid gap-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 items-center">
+    {companies.map((c) => (
+      <div key={c.name} className="flex justify-center">
+        <img
+          src={c.logo}
+          alt={c.name}
+          className="max-h-12 object-contain"
+        />
       </div>
-    </section>
+    ))}
+  </div>
+</section>
+
+
   );
 }
