@@ -41,8 +41,8 @@ export default function Hero() {
             src="/images/hero-containers.png"
             alt="Contenedores"
             className="w-full h-auto object-contain lg:w-[60vw] lg:h-auto"
-            width={300}
-            height={300}
+            width={600}
+            height={600}
           />
         </motion.div>
       </div>
