@@ -146,7 +146,7 @@ export default function Services() {
             cuidado.
           </p>
           <div className="sm:col-start-2 sm:col-end-6 sm:flex sm:justify-start">
-            <button className="flex items-center justify-center gap-2 mt-6 bg-[#DC6018] text-white text-lg sm:text-xl font-normal rounded-sm px-6 py-3 w-full max-w-xs shadow-md hover:bg-[#b94c12] transition cursor-pointer">
+            <button className="flex items-center justify-center gap-2 mt-6 bg-[#DC6018] text-white text-lg sm:text-xl font-normal rounded-sm px-6 py-3 w-full max-w-sm shadow-md hover:bg-[#b94c12] transition cursor-pointer">
               <Container />
               Contáctanos y cotiza hoy
             </button>
