@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚚 Camacho Sánchez Logistics — Web Platform
 
-## Getting Started
+**Official website for Camacho Sánchez Logistics**, a company dedicated to efficient, reliable, and technology-driven transport and logistics services.
 
-First, run the development server:
+This project is a modern web platform built to showcase the company's services, improve customer engagement, and simplify the contact and quote-request processes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧱 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 15** – React framework with Turbopack support
+- **Tailwind CSS 4** – Utility-first CSS framework
+- **TypeScript 5** – Type-safe development
+- **Lucide React** – Icon set for React
+- **Animate.css** – For smooth entrance animations
+- **Motion One** – Animation library for performant motion effects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌟 Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- 📦 Service presentation with modern UI
+- 🧭 Clear navigation by logistics areas
+- 📬 Integrated contact and quote forms
+- 📱 Fully responsive and SEO-optimized
+- ⚙️ Fast build with Turbopack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
+This project is part of a personal portfolio and is **not open source**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All rights reserved © John Riera.  
+Please do not copy, use, or distribute this code without permission.  
+For inquiries, contact me johnriera395@gmail.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👤 Author
+
+Made by [John Riera](https://riera.dev)  
+Frontend Developer & UI Designer based in Granada, Spain.
