@@ -10,6 +10,7 @@ import {
   SquaresSubtract,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Services() {
   const titleRef = useRef(null);
@@ -29,7 +30,7 @@ export default function Services() {
   const footerInView = useInView(footerRef, { amount: 0.3 });
 
   return (
-    <section className="text-csl-dark mb-20 px-4 sm:px-8">
+    <section className="text-csl-dark mt-20 mb-20">
       <motion.div
         ref={titleRef}
         initial={{ opacity: 0, y: 20 }}
@@ -40,7 +41,7 @@ export default function Services() {
         <div className="sm:col-start-1 sm:col-end-5 flex gap-4 mb-10 items-center justify-center sm:justify-start">
           <div className="w-24 h-px bg-white self-center hidden sm:block" />
           <h2 className="text-2xl sm:text-3xl font-medium flex items-center gap-2 text-center sm:text-left">
-            Transporte de contenedores
+            Servicio de transporte de contenedores
           </h2>
         </div>
 
@@ -146,10 +147,16 @@ export default function Services() {
             cuidado.
           </p>
           <div className="sm:col-start-2 sm:col-end-6 sm:flex sm:justify-start">
+            <Link
+            href={
+              "https://api.whatsapp.com/send?phone=+593997911447&text=Hola.%20Estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20transporte%20y%20log%C3%ADstica%20que%20ofrece%20Camacho%20S%C3%A1nchez%20Logistics.%20%C2%BFPodr%C3%ADan%20proporcionarme%20informaci%C3%B3n%20o%20una%20cotizaci%C3%B3n?%20Muchas%20gracias.%20Mi%20nombre%20es%20John"
+            }
+            target="_blank"
+          >
             <button className="flex items-center justify-center gap-2 mt-6 bg-[#DC6018] text-white text-lg sm:text-xl font-normal rounded-sm px-6 py-3 w-full max-w-sm shadow-md hover:bg-[#b94c12] transition cursor-pointer">
               <Container />
               Contáctanos y cotiza hoy
-            </button>
+            </button></Link>
           </div>
         </div>
       </motion.div>

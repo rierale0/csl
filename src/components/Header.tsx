@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,14 +20,21 @@ export default function Header() {
         />
       </div>
 
-      {/* NAVIGATION desktop */}
+      {/* NAVIGATION desktop 
       <nav className="hidden md:flex items-center gap-12 font-medium text-csl-dark">
         <MenuItem label="Servicios" />
         <MenuItem label="Flota" />
         <MenuItem label="Seguridad" />
       </nav>
+      */}
 
       {/* BUTTON desktop */}
+      <Link
+            href={
+              "https://api.whatsapp.com/send?phone=+593997911447&text=Hola.%20Estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20transporte%20y%20log%C3%ADstica%20que%20ofrece%20Camacho%20S%C3%A1nchez%20Logistics.%20%C2%BFPodr%C3%ADan%20proporcionarme%20informaci%C3%B3n%20o%20una%20cotizaci%C3%B3n?%20Muchas%20gracias.%20Mi%20nombre%20es%20John"
+            }
+            target="_blank"
+          >
       <button
         type="button"
         className="hidden md:inline-block btn-fill text-csl-light font-semibold rounded-sm px-8 py-1 shadow relative transition-colors duration-300 ease-in cursor-pointer"
@@ -34,6 +42,7 @@ export default function Header() {
         <span className="fill-bg"></span>
         <span className="relative z-10">Cotizar</span>
       </button>
+      </Link>
 
       {/* MOBILE MENU BUTTON */}
       <button
