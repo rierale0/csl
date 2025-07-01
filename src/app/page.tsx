@@ -24,7 +24,7 @@ export default function Home() {
   <Objectives />
   <CTA />
   <Footer />
-  <Chatbot/>  
+  <Chatbot webhookUrl="https://n8n.pycat.dev/webhook/03feca04-a25b-44a1-af2a-c0e0a53686a7"/>  
 </PageWithGridOverlay>
   );
 }
